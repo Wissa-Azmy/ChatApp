@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-2.2.0.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>Getting server updates</h1>
+<div id="result"></div>
+
+<script>
+if(typeof(EventSource) !== "undefined") {
+    var source = new EventSource("demo_sse.php");
+    source.onmessage = function(event) {
+        $("#result").append(event.data+"<br/>");
+    };
+
+} else {
+    $("#result").text("Sorry, your browser does not support server-sent events..."); 
+}
+</script>
+
+</body>
+</html>

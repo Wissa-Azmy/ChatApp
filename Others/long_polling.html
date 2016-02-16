@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Long Polling</title>
+</head>
+<body>
+	<div id="userlist">
+		
+	</div>
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+	var timestamp = 0;
+	function getUsers(){
+		$.ajax({
+		url: 'long_polling.php?timestamp='+timestamp,
+		cache: false,
+        timeout:30000,
+		success: function(response){
+			response = JSON.parse(response);
+
+
+			$('#userlist').html(response.data);
+			timestamp = response.timestamp;
+			setTimeout(getUsers, 1000);
+		},
+		error: function(error, textStatus){
+                    if(textStatus === 'timeout')
+                    {     
+                         console.log('Failed from timeout');         
+                        //do something. Try again perhaps?
+                        setTimeout(
+                            getUsers,
+                            1000
+                        );
+                    }
+                }
+	})
+	;
+	}
+
+	getUsers();
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Server Sent Events</title>
+</head>
+<body>
+	<div id="userlist">
+		
+	</div>
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		if(window.EventSource){
+			console.log('sse enabled');
+		var evtSource = new EventSource("sse.php");
+		evtSource.onmessage = function(e) {
+			  console.log(e.data);
+			  var data = JSON.parse(e.data);
+			  console.log(data.msg);
+			}
+		}else{
+			console.log('sse not enabled');
+		}
+
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
