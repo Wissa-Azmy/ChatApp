@@ -7,7 +7,7 @@
  */
 session_start();
 if(!isset($_SESSION["manager"])){
-    header("location:../templates/login/index.html");
+    header("location:../login/index.php");
     exit();
 }
 $id = preg_replace('#[^0-9]#i',"", $_SESSION['id']);
@@ -21,7 +21,7 @@ $existCount = $db->num_rows($sql);
 
 if($existCount == 0){
     unset($_SESSION['manager']);
-    header("location:../templates/login/index.html");
+    header("location:../login/index.php");
     exit();
 }
 ?>

@@ -16,16 +16,16 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li <?php echo $home;?> ><a href="index.php" class="">Home</a></li>
-                    <li <?php echo $inventory;?> ><a href="inventory_list.php" class="">Inventory</a></li>
-                    <li <?php echo $users;?> ><a href="user_list.php" class="">Users</a></li>
+                    <li <?php echo $home;?> ><a href="../chatroom/index.php" class="">Home</a></li>
+                    <li <?php echo $inventory;?> ><a href="#" class="">Inventory</a></li>
+                    <li <?php echo $users;?> ><a href="#" class="">Users</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a href="#" data-toggle="dropdown"><?php echo "<b>". $adminUser . "</b>"; ?>
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#" rel="Profile">Profile</a></li>
-                            <li><a href="../../auth/user_logout.php" rel="Log out">Log Out</a></li>
+                            <li><a href="../pages/user_logout.php" rel="Log out">Log Out</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -1,9 +1,8 @@
 <?php
-require '../../scripts/db-connect.php';
-require '../../auth/session_validation.php';
+require '../pages/db-connect.php';
+require '../pages/session_validation.php';
 ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -24,7 +23,7 @@ require '../../auth/session_validation.php';
     $home = 'class="active"';
     $inventory = '';
     $users = '';
-    include 'header.php';
+    include '../pages/header.php';
     ?>
 <div class="row " style="padding-top:40px;">
     <h3 class="text-center" >WELCOME TO THE CHAT SPACE</h3>
@@ -43,7 +42,7 @@ require '../../auth/session_validation.php';
                 <div class="input-group">
                     <input type="text" class="form-control" id="message" placeholder="Enter Message" />
                     <span class="input-group-btn">
-                        <button class="btn btn-info" id="send" type="button">SEND</button>
+                        <button class="btn btn-info" id="send" type="submit">SEND</button>
                     </span>
                 </div>
             </div>
@@ -89,8 +88,8 @@ require '../../auth/session_validation.php';
 </div>
   </div>
 
-	<script type="text/javascript" src="../../jquery.min.js"></script>
-	<script type="text/javascript" src="../../scripts/Socket main.js"></script>
-  <script src="../../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/Socket main.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

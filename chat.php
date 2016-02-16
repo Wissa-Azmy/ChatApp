@@ -5,10 +5,10 @@
 </head>
 <body>
 	<div id="userlist">
-		
+
 	</div>
 
-	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript">
 	function getUsers(){
 		$.ajax({
@@ -22,7 +22,7 @@
 	}
 
 	var myinterval = setInterval(getUsers, 1000);
-	
+
 	</script>
 </body>
 </html>

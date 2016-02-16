@@ -1,3 +1,11 @@
+<?php
+exec('&php ../websocketserver.php');
+session_start();
+if(isset($_SESSION['manager'])){
+	header("location:../chatroom/index.php");
+	exit();
+}
+?>
 <!DOCTYPE html>
 <html >
   <head>
@@ -19,28 +27,28 @@
   </div>
 </div>
 <div class="form">
-  <!-- <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg"/></div> -->
-  <form class="register-form">
-    <input type="text" placeholder="name"/>
-    <input type="password" placeholder="password"/>
-    <input type="text" placeholder="email address"/>
+  <!-- <div class="thumbnail"><img src=" "/></div> -->
+  <form action="../pages/add_user.php" method="post" class="register-form">
+    <input type="text" name="userName" placeholder="name"/>
+    <input type="password" name="password" placeholder="password"/>
+    <input type="text" name="email" placeholder="email address"/>
     <button>create</button>
     <p class="message">Already registered? <a href="#">Sign In</a></p>
   </form>
-  <form action="../../auth/user_login.php" method="post" class="login-form">
+  <form action="../pages/user_login.php" method="post" class="login-form">
     <input type="text" name="username" id="username" placeholder="username"/>
     <input type="password" name="password" placeholder="password"/>
     <button type="submit">login</button>
     <p class="message">Not registered? <a href="#">Create an account</a></p>
   </form>
 </div>
-<!-- <video id="video" autoplay="autoplay" loop="loop" poster="polina.jpg"> -->
-  <!-- <source src="http://andytran.me/A%20peaceful%20nature%20timelapse%20video.mp4" type="video/mp4"/> -->
-<!-- </video> -->
-    <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+<!-- <video id="video" autoplay="autoplay" loop="loop" poster="polina.jpg">
+  <source src="http://andytran.me/A%20peaceful%20nature%20timelapse%20video.mp4" type="video/mp4"/>
+</video> -->
+    <script src='../js/jquery-2.2.0.min.js'></script>
 
-        <!-- <script src="js/index.js"></script> -->
-      <script type="text/javascript" src="../../jquery.min.js"></script>
-      <script type="text/javascript" src="../../scripts/Socket main.js"></script>
+        <script src="js/index.js"></script>
+      <script type="text/javascript" src="../js/jquery.min.js"></script>
+      <script type="text/javascript" src="../js/Socket main.js"></script>
   </body>
 </html>

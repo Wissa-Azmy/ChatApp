@@ -7,5 +7,5 @@
     setcookie(session_name(),'',0,'/');
     session_regenerate_id(true);
 
-    header('location:../templates/login/index.html');
+    header('location:../login/index.php');
 ?>

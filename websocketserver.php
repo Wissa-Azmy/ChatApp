@@ -1,5 +1,5 @@
 <?php
-require_once './websockets.php';
+require_once 'websockets.php';
 class WSServer extends WebSocketServer{
 
 	protected static $myusers;
@@ -12,7 +12,7 @@ class WSServer extends WebSocketServer{
 		foreach ($this->myusers as $client) {
 			$this->send($client, $message);
 		}
-	} // Called immediately when the data is recieved. 
+	} // Called immediately when the data is recieved.
   protected function connected($user){
   	echo 'someone connected'.PHP_EOL;
   	$this->myusers->attach($user);
